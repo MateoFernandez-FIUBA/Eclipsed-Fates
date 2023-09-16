@@ -11,6 +11,8 @@ public class OptionsMenu : MonoBehaviour
     public int quality;
     public Toggle fullScreenToggle;
     Resolution[] resolutions;
+    public Slider generalSoundSlider;
+    public float generalSoundValue;
 
     private void Start()
     {
@@ -18,6 +20,8 @@ public class OptionsMenu : MonoBehaviour
         quality = PlayerPrefs.GetInt("QualityNumber", 2);
         qualityDropDown.value = quality;
         ChangeQuality();
+        generalSoundSlider.value = PlayerPrefs.GetFloat("GeneralSound", 0.5f);
+        AudioListener.volume = generalSoundValue;
         if (Screen.fullScreen)
         {
             fullScreenToggle.isOn = true;
@@ -70,5 +74,10 @@ public class OptionsMenu : MonoBehaviour
         Screen.fullScreen = fullScreen;
     }
 
-
+    public void ChangeSlider(float value)
+    {
+        generalSoundValue = value;
+        PlayerPrefs.SetFloat("SetSound", generalSoundValue);
+        AudioListener.volume = generalSoundSlider.value;
+    }
 }
