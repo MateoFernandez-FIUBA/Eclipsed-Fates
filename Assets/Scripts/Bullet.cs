@@ -29,5 +29,9 @@ public class Bullet : MonoBehaviour
             collision.GetComponent<Enemy>().TakeDamage(damage);
             Destroy(gameObject);
         }
+        if (collision.CompareTag("Walls"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

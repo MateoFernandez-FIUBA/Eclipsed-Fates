@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class BotonMenu : MonoBehaviour
 {
-    public void Jugar()
+    public void LoadSceneOnClick(string sceneName)
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(sceneName);
     }
 
-    public void Salir()
+    public void Exit()
     {
         Application.Quit();
     }
