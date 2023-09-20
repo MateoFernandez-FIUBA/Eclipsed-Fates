@@ -21,6 +21,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        Time.timeScale = 1.0f;
+    }
+
     public void GameOver()
     {
         //Hara lo que tenga que hacer xd

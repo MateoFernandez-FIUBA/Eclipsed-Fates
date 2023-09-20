@@ -6,7 +6,8 @@ using TMPro;
 
 public class CanvasScript : MonoBehaviour
 {
-    public TextMeshProUGUI healtText;
+    [SerializeField] private TextMeshProUGUI healtText;
+    [SerializeField] private GameObject pauseMenu;
     public void ExitGame()
     {
         Application.Quit();
@@ -17,16 +18,15 @@ public class CanvasScript : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    public void CallPause()
+    public void PauseGame()
     {
-        if (Time.timeScale == 0f)
-        {
-            Time.timeScale = 1f;
-        }
-        else
-        {
-            Time.timeScale = 0f;
-        }
+        Time.timeScale = 0f;
+        pauseMenu.SetActive(true);
+    }
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
+        pauseMenu.SetActive(false);
     }
 
     public void UpdateHealt(float actualHealt, float totalHealt)

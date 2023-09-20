@@ -74,16 +74,17 @@ public class Console : MonoBehaviour
     {
         if (consoleIsActivatedByTheUser)
         {
-            canvasScript.CallPause();
             if (consoleActivated == false)
             {
                 console.SetActive(true);
                 consoleActivated = true;
+                Time.timeScale = 0f;
             }
             else
             {
                 console.SetActive(false);
                 consoleActivated = false;
+                Time.timeScale = 1f;
             }
         }
     }
