@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Localization;
 using TMPro;
+using UnityEngine.Localization.Settings;
 
 public class OptionsMenu : MonoBehaviour
 {
     public TMP_Dropdown resolutionsDropDown;
     public TMP_Dropdown qualityDropDown;
+    public TMP_Dropdown languageDropDown;
     public int quality;
     public Toggle fullScreenToggle;
     Resolution[] resolutions;
@@ -67,6 +70,13 @@ public class OptionsMenu : MonoBehaviour
         QualitySettings.SetQualityLevel(qualityDropDown.value);
         PlayerPrefs.SetInt("QualityNumber", qualityDropDown.value);
         quality = qualityDropDown.value;
+    }
+    
+    public void ChangeLanguage(int language)
+    {
+        language = languageDropDown.value;
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[language];
+        PlayerPrefs.SetInt("Language", language);
     }
 
     public void SetFullScreen(bool fullScreen)

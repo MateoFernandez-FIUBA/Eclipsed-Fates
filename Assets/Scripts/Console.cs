@@ -10,6 +10,7 @@ public class Console : MonoBehaviour
 {
     [SerializeField] private bool consoleIsActivatedByTheUser = false;
     [SerializeField] private GameObject console;
+    [SerializeField] private Character player;
     [SerializeField] private bool consoleActivated;
     [SerializeField] private TMPro.TMP_Text backgroundText;
     [SerializeField] private TMPro.TMP_InputField inputText;
@@ -24,6 +25,7 @@ public class Console : MonoBehaviour
         RegisterCommand("cls", Clear);
         RegisterCommand("clear", Clear);
         RegisterCommand("help", Help);
+        RegisterCommand("kill", KillPlayer);
         Write("Use with caution!\n");
     }
 
@@ -102,5 +104,10 @@ public class Console : MonoBehaviour
     public void Help()
     {
         backgroundText.text += "\nYou can use 'clear' for clear the console!";
+    }
+
+    public void KillPlayer()
+    {
+        player.TakeDamage(100f);
     }
 }

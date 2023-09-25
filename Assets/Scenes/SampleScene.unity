@@ -3012,6 +3012,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5404994030942981909, guid: dfabd2428e11e6746b8482e69b75ef55, type: 3}
   m_PrefabInstance: {fileID: 226056053}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &442239828 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5138716264027315535, guid: dfabd2428e11e6746b8482e69b75ef55, type: 3}
+  m_PrefabInstance: {fileID: 226056053}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 442239803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e90899fd6a37444b461243f15e3991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &444205918
 GameObject:
   m_ObjectHideFlags: 0
@@ -11038,6 +11049,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Console
       objectReference: {fileID: 0}
+    - target: {fileID: 7107620271748557688, guid: 22bab98c749891641957562c689bed3d, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 442239828}
     - target: {fileID: 7107620271748557688, guid: 22bab98c749891641957562c689bed3d, type: 3}
       propertyPath: canvasScript
       value: 
