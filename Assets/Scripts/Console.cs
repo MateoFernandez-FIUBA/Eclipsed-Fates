@@ -103,7 +103,7 @@ public class Console : MonoBehaviour
 
     public void Help()
     {
-        backgroundText.text += "\nYou can use 'clear' for clear the console!";
+        backgroundText.text += "\nYou can use 'clear' for clear the console!\nYou can use 'kill' for killing the player!";
     }
 
     public void KillPlayer()
