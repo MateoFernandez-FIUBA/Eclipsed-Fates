@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviour
     {
         speed = 10;
 
-        damage = 1;
+        damage = 2;
     }
 
     private void Update()

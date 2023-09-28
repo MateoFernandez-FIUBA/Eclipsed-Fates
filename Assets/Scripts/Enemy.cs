@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        life = 5;
+        life = 10;
         speed = 1.5f;
         damage = 25;
     }

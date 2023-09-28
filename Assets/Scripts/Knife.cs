@@ -13,7 +13,7 @@ public class Knife : MonoBehaviour
     private void Start()
     {
         radius = 0.5f;
-        damage = 10f;
+        damage = 1f;
         timeBtwAttack = 1f;
     }
 
