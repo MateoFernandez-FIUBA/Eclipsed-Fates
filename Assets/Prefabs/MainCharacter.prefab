@@ -66,7 +66,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.83, y: -5.37, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6849418478876594748}
@@ -115,7 +115,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300020, guid: 2164a1816f29acf45ad76327ffa671c7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d475c3c071c624b43bdd632797b7ac5c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -141,6 +141,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   maxLife: 0
   life: 0
+  canvasScript: {fileID: 0}
 --- !u!114 &8685045523512970433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,6 +187,7 @@ MonoBehaviour:
   weapon: {fileID: 6849418478876594748}
   ammunition: {fileID: 3546313302707468446, guid: 84ce138c081a7dc46af982ab6ed6bad5, type: 3}
   ammunitionAmount: 0
+  maxAmmunition: 0
 --- !u!58 &8916594351703036345
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -218,9 +220,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.010821819, y: 0.059524298}
+  m_Offset: {x: 0.20697036, y: -0.17865816}
   serializedVersion: 2
-  m_Radius: 0.9570408
+  m_Radius: 1.4894445
 --- !u!50 &2412872318207579389
 Rigidbody2D:
   serializedVersion: 4
@@ -232,8 +234,8 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 10
+  m_UseAutoMass: 1
+  m_Mass: 0.62725055
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -292,8 +294,8 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CanvasScript, Assembly-CSharp
-        m_MethodName: CallPause
+        m_TargetAssemblyTypeName: Console, Assembly-CSharp
+        m_MethodName: ActivateConsole
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -303,8 +305,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 33d0c3e6-ac7a-40c1-9e19-af50ca17a8e9
-    m_ActionName: Player/Pause[/Keyboard/escape]
+    m_ActionId: 4f83797a-e908-4bd5-bfb8-d676fd4a67a7
+    m_ActionName: Player/Console[/Keyboard/slash]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Console, Assembly-CSharp
+        m_MethodName: SendToConsole
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 81914a63-77a7-4225-987d-3ce7b0952818
+    m_ActionName: Player/SendToConsole[/Keyboard/enter]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
