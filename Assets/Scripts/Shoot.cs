@@ -13,6 +13,10 @@ public class Shoot : MonoBehaviour
 
     [SerializeField] private int maxAmmunition;
 
+    [SerializeField] private GameObject shootingLight;
+
+    [SerializeField] private float shootingLightDuration = 0.1f;
+
     private Character character;
 
     private bool isReloading = false;
@@ -28,13 +32,22 @@ public class Shoot : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && ammunitionAmount>0 && !isReloading && Time.timeScale==1f)
         {
             Shooting();
+            StartCoroutine(ActivateShootingLight());
         }
+        
     }
 
     private void Shooting()
     {
         Instantiate(ammunition, weapon.position, weapon.rotation);
         ammunitionAmount -= 1;
+    }
+
+    private IEnumerator ActivateShootingLight()
+    {
+        shootingLight.SetActive(true);
+        yield return new WaitForSeconds(shootingLightDuration);
+        shootingLight.SetActive(false);
     }
 
     /*public void Reload()
