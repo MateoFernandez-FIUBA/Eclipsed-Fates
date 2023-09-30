@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 1.0f;
+        Application.targetFrameRate = 300;
     }
 
     public void GameOver()
