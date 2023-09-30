@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     {
         //Hara lo que tenga que hacer xd
         uiManager.ShowPanel(deadScreen);
+        Time.timeScale = 0f;
     }
 
 }

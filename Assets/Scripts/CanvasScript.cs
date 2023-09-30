@@ -20,8 +20,11 @@ public class CanvasScript : MonoBehaviour
 
     public void PauseGame()
     {
-        Time.timeScale = 0f;
-        pauseMenu.SetActive(true);
+        if (Time.timeScale != 0)
+        {
+            Time.timeScale = 0f;
+            pauseMenu.SetActive(true);
+        }
     }
     public void ResumeGame()
     {
@@ -31,6 +34,8 @@ public class CanvasScript : MonoBehaviour
 
     public void UpdateHealt(float actualHealt, float totalHealt)
     {
-        healtText.text = actualHealt.ToString("F2") + " / " + totalHealt.ToString("F2");
+        actualHealt = Mathf.Max(actualHealt, 0f);
+        float showLife = (actualHealt / totalHealt) * 100f;
+        healtText.text = showLife.ToString("F0") + "%";
     }
 }

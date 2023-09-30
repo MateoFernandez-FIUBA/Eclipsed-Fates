@@ -89,18 +89,24 @@ public class OptionsMenu : MonoBehaviour
     {
         float generalVolume = generalVolumeSlider.value;
 
-        audioMixer.SetFloat("Master", generalVolume);   
+        audioMixer.SetFloat("Master", generalVolume);
+
+        PlayerPrefs.SetFloat("Master", generalVolume);
     }
     public void ChangeSFXVolume()
     {
         float sfxVolume = sfxVolumeSlider.value;
 
         audioMixer.SetFloat("SFX", sfxVolume);
+
+        PlayerPrefs.SetFloat("SFX", sfxVolume);
     }
     public void ChangeMusicVolume()
     {
         float musicVolume = musicVolumeSlider.value;
 
         audioMixer.SetFloat("Music", musicVolume);
+
+        PlayerPrefs.SetFloat("Music", musicVolume);
     }
 }

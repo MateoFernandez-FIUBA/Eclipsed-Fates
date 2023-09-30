@@ -103,6 +103,14 @@ MonoBehaviour:
     m_Key: PauseButton(HUD)
     m_Metadata:
       m_Items: []
+  - m_Id: 1502866491338752
+    m_Key: SFXSlider
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1502965103620096
+    m_Key: MusicSlider
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
