@@ -7,6 +7,7 @@ using TMPro;
 public class CanvasScript : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI healtText;
+    [SerializeField] private TextMeshProUGUI flashLightBattery;
     [SerializeField] private GameObject pauseMenu;
     public void ExitGame()
     {
@@ -37,5 +38,12 @@ public class CanvasScript : MonoBehaviour
         actualHealt = Mathf.Max(actualHealt, 0f);
         float showLife = (actualHealt / totalHealt) * 100f;
         healtText.text = showLife.ToString("F0") + "%";
+    }
+
+    public void UpdateFlashLightBattery(float actualBattery, float inicialBattery)
+    {
+        actualBattery = Mathf.Max(actualBattery, 0f);
+        float showBattery = (actualBattery / inicialBattery) * 100f;
+        flashLightBattery.text = showBattery.ToString("F0") + "%";
     }
 }
