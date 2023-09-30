@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Localization;
 using TMPro;
 using UnityEngine.Localization.Settings;
+using UnityEngine.Audio;
 
 public class OptionsMenu : MonoBehaviour
 {
@@ -14,8 +15,10 @@ public class OptionsMenu : MonoBehaviour
     public int quality;
     public Toggle fullScreenToggle;
     Resolution[] resolutions;
-    public Slider generalSoundSlider;
-    public float generalSoundValue;
+    public Slider generalVolumeSlider;
+    public Slider sfxVolumeSlider;
+    public Slider musicVolumeSlider;
+    public AudioMixer audioMixer;
 
     private void Start()
     {
@@ -23,8 +26,6 @@ public class OptionsMenu : MonoBehaviour
         quality = PlayerPrefs.GetInt("QualityNumber", 2);
         qualityDropDown.value = quality;
         ChangeQuality();
-        generalSoundSlider.value = PlayerPrefs.GetFloat("GeneralSound", 0.5f);
-        AudioListener.volume = generalSoundValue;
         if (Screen.fullScreen)
         {
             fullScreenToggle.isOn = true;
@@ -84,10 +85,22 @@ public class OptionsMenu : MonoBehaviour
         Screen.fullScreen = fullScreen;
     }
 
-    public void ChangeSlider(float value)
+    public void ChangeMasterVolume()
     {
-        generalSoundValue = value;
-        PlayerPrefs.SetFloat("SetSound", generalSoundValue);
-        AudioListener.volume = generalSoundSlider.value;
+        float generalVolume = generalVolumeSlider.value;
+
+        audioMixer.SetFloat("Master", generalVolume);   
+    }
+    public void ChangeSFXVolume()
+    {
+        float sfxVolume = sfxVolumeSlider.value;
+
+        audioMixer.SetFloat("SFX", sfxVolume);
+    }
+    public void ChangeMusicVolume()
+    {
+        float musicVolume = musicVolumeSlider.value;
+
+        audioMixer.SetFloat("Music", musicVolume);
     }
 }

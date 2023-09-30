@@ -17,6 +17,8 @@ public class Shoot : MonoBehaviour
 
     [SerializeField] private float shootingLightDuration = 0.1f;
 
+    [SerializeField] private AudioSource shootingSound;
+
     private Character character;
 
     private bool isReloading = false;
@@ -32,7 +34,6 @@ public class Shoot : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && ammunitionAmount>0 && !isReloading && Time.timeScale==1f)
         {
             Shooting();
-            StartCoroutine(ActivateShootingLight());
         }
         
     }
@@ -40,6 +41,8 @@ public class Shoot : MonoBehaviour
     private void Shooting()
     {
         Instantiate(ammunition, weapon.position, weapon.rotation);
+        StartCoroutine(ActivateShootingLight());
+        shootingSound.Play();
         ammunitionAmount -= 1;
     }
 
