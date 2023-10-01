@@ -21,7 +21,7 @@ public class FlashLight : MonoBehaviour
 
     private void Update()
     {
-        if (currentBatteryLevel > 0 || flashLight.intensity > 0.1f)
+        if (currentBatteryLevel > 0 || flashLight.intensity > 0.25f)
         {
             currentBatteryLevel -= batteryDrainRate * Time.deltaTime;
             currentBatteryLevel = Mathf.Max(currentBatteryLevel, 0f);
@@ -37,8 +37,8 @@ public class FlashLight : MonoBehaviour
         float outerRadius = currentBatteryLevel / initialBatteryLevel * maxOuter;
 
         // Aplica los límites mínimos
-        intensity = Mathf.Max(intensity, 0.1f);
-        outerRadius = Mathf.Max(outerRadius, 2f);
+        intensity = Mathf.Max(intensity, 0.25f);
+        outerRadius = Mathf.Max(outerRadius, 3f);
 
         flashLight.intensity = intensity;
         flashLight.pointLightOuterRadius = outerRadius;
