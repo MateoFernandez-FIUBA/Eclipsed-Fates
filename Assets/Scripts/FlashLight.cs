@@ -38,7 +38,7 @@ public class FlashLight : MonoBehaviour
 
         // Aplica los límites mínimos
         intensity = Mathf.Max(intensity, 0.25f);
-        outerRadius = Mathf.Max(outerRadius, 3f);
+        outerRadius = Mathf.Max(outerRadius, 2f);
 
         flashLight.intensity = intensity;
         flashLight.pointLightOuterRadius = outerRadius;
