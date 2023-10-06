@@ -1,43 +1,33 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 
 public class Shoot : MonoBehaviour
 {
+    [Header("GameObjects")]
     [SerializeField] private Transform weapon;
-
-    [SerializeField] private GameObject ammunition;
-
-    [SerializeField] private int ammunitionAmount;
-
-    [SerializeField] private int maxAmmunition;
-
-    [SerializeField] private GameObject shootingLight;
-
-    [SerializeField] private float shootingLightDuration = 0.1f;
-
-    [SerializeField] private AudioSource shootingSound;
-
-    private Character character;
-
-    private bool isReloading = false;
+    [SerializeField] private GameObject ammunition, shootingLight;
+    [Header("Sounds")]
+    [SerializeField] private AudioSource shootingSound, reloadSound;
+    [Header("Vars")]
+    [SerializeField] private int ammunitionAmount, totalAmmunition, maxAmmunitionInBackpack;
+    [SerializeField] private float shootingLightDuration;
+    [SerializeField] private bool isReloading = false;
 
     private void Start()
     {
-        maxAmmunition = 100;
-        ammunitionAmount = 30;
+        ammunitionAmount = 8;
+        totalAmmunition = 50;
+        maxAmmunitionInBackpack = 50;
+        shootingLightDuration = 0.1f;
     }
-
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1") && ammunitionAmount>0 && !isReloading && Time.timeScale==1f)
+        if (Input.GetButtonDown("Fire1") && ammunitionAmount > 0 && !isReloading && Time.timeScale == 1f)
         {
             Shooting();
         }
-        
     }
-
     private void Shooting()
     {
         Instantiate(ammunition, weapon.position, weapon.rotation);
@@ -45,27 +35,35 @@ public class Shoot : MonoBehaviour
         shootingSound.Play();
         ammunitionAmount -= 1;
     }
-
     private IEnumerator ActivateShootingLight()
     {
         shootingLight.SetActive(true);
         yield return new WaitForSeconds(shootingLightDuration);
         shootingLight.SetActive(false);
     }
-
-    /*public void Reload()
+    public void Reload()
     {
-        if (!isReloading && ammunitionAmount<maxAmmunition)
+        if (!isReloading && Time.timeScale == 1f && ammunitionAmount < 8 && totalAmmunition > 0)
         {
-            StartCoroutine(Reloading());
+            int remainingAmmo = 8 - ammunitionAmount;
+            int ammoToReload = Mathf.Min(remainingAmmo, totalAmmunition);
+
+            ammunitionAmount += ammoToReload;
+            totalAmmunition -= ammoToReload;
+            isReloading = true;
+            reloadSound.Play();
+            StartCoroutine(CompleteReload());
         }
     }
-
-    IEnumerator Reloading()
+    private IEnumerator CompleteReload()
     {
-        isReloading = true;
-        yield return new WaitForSeconds(2.0f);
-        ammunitionAmount = maxAmmunition;
+        yield return new WaitForSeconds(2f);
         isReloading = false;
-    }*/
+    }
+    public void PickAmmunition(int ammo)
+    {
+        int spaceLeftInBackpack = maxAmmunitionInBackpack - totalAmmunition;
+        int ammoToAdd = Mathf.Min(ammo, spaceLeftInBackpack);
+        totalAmmunition += ammoToAdd;
+    }
 }
