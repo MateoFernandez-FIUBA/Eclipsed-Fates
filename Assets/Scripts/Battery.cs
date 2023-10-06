@@ -5,11 +5,29 @@ using UnityEngine;
 public class Battery : MonoBehaviour
 {
     [SerializeField] private float batteryRecharge = 50;
+    [SerializeField] private bool canPickUp = false;
+    private Collider2D playerCollider;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            FlashLight flashLight = collision.GetComponentInChildren<FlashLight>();
+            canPickUp = true;
+            playerCollider = collision;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            canPickUp = false;
+            playerCollider = null;
+        }
+    }
+    public void Apply()
+    {
+        if (canPickUp)
+        {
+            FlashLight flashLight = playerCollider.GetComponentInChildren<FlashLight>();
             if (flashLight != null)
             {
                 flashLight.RechargeBattery(batteryRecharge);
@@ -18,3 +36,4 @@ public class Battery : MonoBehaviour
         }
     }
 }
+

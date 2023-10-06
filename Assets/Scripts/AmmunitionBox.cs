@@ -5,6 +5,8 @@ using UnityEngine;
 public class AmmunitionBox : MonoBehaviour
 {
     [SerializeField] private int ammo;
+    [SerializeField] private bool canPickUp = false;
+    private Collider2D playerCollider;
 
     private void Start()
     {
@@ -14,7 +16,23 @@ public class AmmunitionBox : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<Shoot>().PickAmmunition(ammo);
+            canPickUp = true;
+            playerCollider = collision;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            canPickUp = false;
+            playerCollider = null;
+        }
+    }
+    public void Apply()
+    {
+        if(canPickUp) 
+        {
+            playerCollider.GetComponent<Shoot>().PickAmmunition(ammo);
             Destroy(gameObject);
         }
     }
