@@ -1528,7 +1528,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7839966233717145017, guid: dfabd2428e11e6746b8482e69b75ef55, type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7839966233717145017, guid: dfabd2428e11e6746b8482e69b75ef55, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -1548,6 +1548,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7839966233717145017, guid: dfabd2428e11e6746b8482e69b75ef55, type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839966233717145017, guid: dfabd2428e11e6746b8482e69b75ef55, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[3].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7839966233717145017, guid: dfabd2428e11e6746b8482e69b75ef55, type: 3}
@@ -1579,6 +1583,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1694364789}
     - target: {fileID: 7839966233717145017, guid: dfabd2428e11e6746b8482e69b75ef55, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 1282748265}
+    - target: {fileID: 7839966233717145017, guid: dfabd2428e11e6746b8482e69b75ef55, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -1596,6 +1604,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7839966233717145017, guid: dfabd2428e11e6746b8482e69b75ef55, type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[2].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839966233717145017, guid: dfabd2428e11e6746b8482e69b75ef55, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[3].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7839966233717145017, guid: dfabd2428e11e6746b8482e69b75ef55, type: 3}
@@ -1619,6 +1631,10 @@ PrefabInstance:
       value: Apply
       objectReference: {fileID: 0}
     - target: {fileID: 7839966233717145017, guid: dfabd2428e11e6746b8482e69b75ef55, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: Apply
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839966233717145017, guid: dfabd2428e11e6746b8482e69b75ef55, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: CanvasScript, Assembly-CSharp
       objectReference: {fileID: 0}
@@ -1639,6 +1655,10 @@ PrefabInstance:
       value: AmmunitionBox, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7839966233717145017, guid: dfabd2428e11e6746b8482e69b75ef55, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: MedicalKit, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839966233717145017, guid: dfabd2428e11e6746b8482e69b75ef55, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
@@ -1656,6 +1676,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7839966233717145017, guid: dfabd2428e11e6746b8482e69b75ef55, type: 3}
       propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7839966233717145017, guid: dfabd2428e11e6746b8482e69b75ef55, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8916594351703036345, guid: dfabd2428e11e6746b8482e69b75ef55, type: 3}
@@ -1982,10 +2006,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff2b2f7b0e2b03d47b101ecf32ee49df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 0
+  life: 10
   target: {fileID: 442239820}
-  speed: 0
-  damage: 0
+  speed: 1
+  damage: 20
+  detectionRange: 5
+  timeToRememberPlayer: 5
 --- !u!212 &250230400
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17646,10 +17672,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff2b2f7b0e2b03d47b101ecf32ee49df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 0
+  life: 10
   target: {fileID: 442239820}
-  speed: 0
-  damage: 0
+  speed: 1
+  damage: 20
+  detectionRange: 5
+  timeToRememberPlayer: 5
 --- !u!50 &1655353572
 Rigidbody2D:
   serializedVersion: 4
@@ -18693,7 +18721,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1828373428}
   - component: {fileID: 1828373427}
-  - component: {fileID: 1828373426}
+  - component: {fileID: 1828373429}
   - component: {fileID: 1828373425}
   - component: {fileID: 1828373424}
   m_Layer: 0
@@ -18775,22 +18803,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.47, y: 0.55}
   m_EdgeRadius: 0
---- !u!114 &1828373426
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1828373423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff2b2f7b0e2b03d47b101ecf32ee49df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: 0
-  target: {fileID: 442239820}
-  speed: 0
-  damage: 0
 --- !u!212 &1828373427
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18858,6 +18870,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1828373429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828373423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff2b2f7b0e2b03d47b101ecf32ee49df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  life: 10
+  target: {fileID: 442239820}
+  speed: 1
+  damage: 20
+  detectionRange: 5
+  timeToRememberPlayer: 2
 --- !u!1 &1831409904
 GameObject:
   m_ObjectHideFlags: 0
