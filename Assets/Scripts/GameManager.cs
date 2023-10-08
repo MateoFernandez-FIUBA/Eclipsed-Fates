@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public UIManager uiManager;
     [SerializeField] GameObject deadScreen;
+    [SerializeField] CharacterMovement characterMovement;
 
     void Awake()
     {
@@ -25,6 +27,14 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         Application.targetFrameRate = 300;
+        if (SceneManager.GetActiveScene().name == "Tutorial")
+        {
+            characterMovement.DashCondition(false);
+        }
+        else
+        {
+            characterMovement.DashCondition(true);
+        }
     }
 
     public void GameOver()

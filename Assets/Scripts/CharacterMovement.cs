@@ -14,6 +14,8 @@ public class CharacterMovement : MonoBehaviour
 
     private Vector2 input;
 
+    [SerializeField] private bool isDashActivated = true;
+
     void Start()
     {
         rb2D = GetComponent<Rigidbody2D>();
@@ -48,10 +50,22 @@ public class CharacterMovement : MonoBehaviour
 
     public void Dash()
     {
-        if (dashCoolCounter <= 0 && dashCounter <= 0)
+        if (dashCoolCounter <= 0 && dashCounter <= 0 && isDashActivated)
         {
             activeMoveSpeed = dashSpeed;
             dashCounter = dashLenght;
+        }
+    }
+
+    public void DashCondition(bool activated)
+    {
+        if (activated)
+        {
+            isDashActivated = true;
+        }
+        else
+        {
+            isDashActivated = false;
         }
     }
 
