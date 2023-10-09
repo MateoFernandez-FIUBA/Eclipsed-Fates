@@ -7,14 +7,15 @@ using UnityEngine.UIElements;
 
 public class SaveControl : MonoBehaviour
 {
-    public GameObject player;
+    [SerializeField] GameObject player;
+    [SerializeField] Character character;
+    [SerializeField] FlashLight flashLight;
     public string saveFile;
     public SaveData saveData = new SaveData();
 
     private void Awake()
     {
         saveFile = Application.dataPath + "/savedata.json";
-        //player = GameObject.FindGameObjectWithTag("MainCharacter");
     }
 
     public void LoadData()
@@ -23,6 +24,9 @@ public class SaveControl : MonoBehaviour
         {
             string content = File.ReadAllText(saveFile);
             saveData = JsonUtility.FromJson<SaveData>(content);
+            player.transform.position = saveData.position;
+            character.SetLife(saveData.life);
+            flashLight.SetBatteryLevel(saveData.currentBatteryLevel);
         }
         else
         {
@@ -34,7 +38,9 @@ public class SaveControl : MonoBehaviour
     {
         SaveData newData = new SaveData()
         {
-            position = player.transform.position
+            position = player.transform.position,
+            life = character.GetLife(),
+            currentBatteryLevel = flashLight.GetBatteryLevel()
         };
         string JSONFile = JsonUtility.ToJson(newData);
         File.WriteAllText(saveFile, JSONFile);

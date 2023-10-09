@@ -10,7 +10,7 @@ public class FlashLight : MonoBehaviour
     [SerializeField] private float initialBatteryLevel = 100f;
     [SerializeField] private float batteryDrainRate = 0.1f;
     [SerializeField] private float currentBatteryLevel;
-    public CanvasScript canvas;
+    [SerializeField] private CanvasScript canvas;
 
     private void Start()
     {
@@ -51,5 +51,14 @@ public class FlashLight : MonoBehaviour
         currentBatteryLevel = Mathf.Clamp(currentBatteryLevel, 0f, initialBatteryLevel);
         UpdateFlashLight();
         canvas.UpdateFlashLightBattery(currentBatteryLevel, initialBatteryLevel);
+    }
+
+    public float GetBatteryLevel()
+    {
+        return currentBatteryLevel;
+    }
+    public void SetBatteryLevel(float chargedBattery)
+    {
+        currentBatteryLevel = chargedBattery;
     }
 }

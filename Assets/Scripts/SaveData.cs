@@ -7,4 +7,6 @@ using UnityEngine;
 public class SaveData
 {
     public Vector3 position;
+    public float life;
+    public float currentBatteryLevel;
 }

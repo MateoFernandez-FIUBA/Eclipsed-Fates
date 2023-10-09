@@ -9,6 +9,7 @@ public class Character : MonoBehaviour
     [SerializeField] private float maxLife;
     [SerializeField] private float life;
     public CanvasScript canvasScript;
+    public SaveControl saveControl;
 
     void Start()
     {
@@ -43,6 +44,15 @@ public class Character : MonoBehaviour
     {
         life += heal;
         canvasScript.UpdateHealt(life, maxLife);
+    }
+
+    public float GetLife()
+    {
+        return life;
+    }
+    public void SetLife(float chargedLife)
+    {
+        life = chargedLife;
     }
 
     private void IsDead()
