@@ -13,6 +13,7 @@ public class Shoot : MonoBehaviour
     [SerializeField] private int ammunitionAmount, totalAmmunition, maxAmmunitionInBackpack;
     [SerializeField] private float shootingLightDuration;
     [SerializeField] private bool isReloading = false;
+    [SerializeField] private CanvasScript canvas;
 
     private void Start()
     {
@@ -27,6 +28,7 @@ public class Shoot : MonoBehaviour
         {
             Shooting();
         }
+        canvas.UpdateAmmunition(ammunitionAmount, totalAmmunition);
     }
     private void Shooting()
     {

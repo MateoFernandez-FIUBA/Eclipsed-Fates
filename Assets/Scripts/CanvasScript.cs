@@ -8,6 +8,8 @@ public class CanvasScript : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI healtText;
     [SerializeField] private TextMeshProUGUI flashLightBattery;
+    [SerializeField] private TextMeshProUGUI actualAmmunition;
+    [SerializeField] private TextMeshProUGUI remainAmmunition;
     [SerializeField] private GameObject pauseMenu;
     public void ExitGame()
     {
@@ -45,5 +47,11 @@ public class CanvasScript : MonoBehaviour
         actualBattery = Mathf.Max(actualBattery, 0f);
         float showBattery = (actualBattery / inicialBattery) * 100f;
         flashLightBattery.text = showBattery.ToString("F0") + "%";
+    }
+
+    public void UpdateAmmunition(int actual, int remain)
+    {
+        actualAmmunition.text = "" + actual;
+        remainAmmunition.text = "" + remain;
     }
 }

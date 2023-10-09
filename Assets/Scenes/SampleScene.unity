@@ -514,6 +514,10 @@ PrefabInstance:
       propertyPath: canvas
       value: 
       objectReference: {fileID: 1588081064}
+    - target: {fileID: 6632915179470972466, guid: dfabd2428e11e6746b8482e69b75ef55, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1588081064}
     - target: {fileID: 7839966233717145017, guid: dfabd2428e11e6746b8482e69b75ef55, type: 3}
       propertyPath: m_Camera
       value: 
@@ -5433,6 +5437,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce772f4ef07e9543b2654e7a227075b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1329290442 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4035805882862590836, guid: a180867de5d8be2419285db2f9e5a5e4, type: 3}
+  m_PrefabInstance: {fileID: 2122961511597157521}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1392251307
 GameObject:
   m_ObjectHideFlags: 0
@@ -5644,6 +5659,17 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &1498085509 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6867427658144697124, guid: a180867de5d8be2419285db2f9e5a5e4, type: 3}
+  m_PrefabInstance: {fileID: 2122961511597157521}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1588081064 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6674408924956216877, guid: a180867de5d8be2419285db2f9e5a5e4, type: 3}
@@ -8651,6 +8677,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasUI
       objectReference: {fileID: 0}
+    - target: {fileID: 6674408924956216877, guid: a180867de5d8be2419285db2f9e5a5e4, type: 3}
+      propertyPath: actualAmmunition
+      value: 
+      objectReference: {fileID: 1329290442}
+    - target: {fileID: 6674408924956216877, guid: a180867de5d8be2419285db2f9e5a5e4, type: 3}
+      propertyPath: remainAmmunition
+      value: 
+      objectReference: {fileID: 1498085509}
     - target: {fileID: 8500541743677088176, guid: a180867de5d8be2419285db2f9e5a5e4, type: 3}
       propertyPath: player
       value: 
