@@ -9,7 +9,6 @@ public class Character : MonoBehaviour
     [SerializeField] private float maxLife;
     [SerializeField] private float life;
     public CanvasScript canvasScript;
-    public SaveControl saveControl;
 
     void Start()
     {

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public UIManager uiManager;
+    public SaveControl saveControl;
     [SerializeField] GameObject deadScreen;
     [SerializeField] CharacterMovement characterMovement;
 
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1.0f;
         Application.targetFrameRate = 300;
+        saveControl.LoadData();
         if (SceneManager.GetActiveScene().name == "Tutorial")
         {
             characterMovement.DashCondition(false);
