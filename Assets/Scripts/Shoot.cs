@@ -8,7 +8,7 @@ public class Shoot : MonoBehaviour
     [SerializeField] private Transform weapon;
     [SerializeField] private GameObject ammunition, shootingLight;
     [Header("Sounds")]
-    [SerializeField] private AudioSource shootingSound, reloadSound;
+    [SerializeField] private AudioSource shootingSound, reloadSound, emptySound;
     [Header("Vars")]
     [SerializeField] private int ammunitionAmount, totalAmmunition, maxAmmunitionInBackpack;
     [SerializeField] private float shootingLightDuration;
@@ -24,9 +24,16 @@ public class Shoot : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetButtonDown("Fire1") && ammunitionAmount > 0 && !isReloading && Time.timeScale == 1f)
+        if (Input.GetButtonDown("Fire1") && !isReloading && Time.timeScale == 1f)
         {
-            Shooting();
+            if (ammunitionAmount > 0)
+            {
+                Shooting();
+            }
+            else
+            {
+                emptySound.Play();
+            }
         }
         canvas.UpdateAmmunition(ammunitionAmount, totalAmmunition);
     }
